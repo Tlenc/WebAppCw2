@@ -19,3 +19,7 @@ app.get("/lessons", function(req, res) {
        res.send(data);
      });   
 });
+
+app.get("/user", function(req, res) {
+    res.json({'email': 'user@email.com', 'password': 'mypassword'});
+});
