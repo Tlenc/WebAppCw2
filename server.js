@@ -23,3 +23,7 @@ app.get("/lessons", function(req, res) {
 app.get("/user", function(req, res) {
     res.json({'email': 'user@email.com', 'password': 'mypassword'});
 });
+
+app.use(function(req, res) {
+    response.status(404).send("Page not found!");
+});
