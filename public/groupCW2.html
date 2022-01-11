@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" type="text/css" href="styleSheet.css">
+</head>
+<body>
+    <div id="app">
+      <div class="boxes" v-for="lesson in lesson">
+        <ul>
+            <li><p>Topic: {{lesson.topic}}</p></li>
+            <li><p>Location: {{lesson.location}}</p></li>
+            <li><p>Price: £{{lesson.price}}</p></li>
+        </ul>
+      </div>
+      
+    </div>
+</body>
+
+<script>
+  let app = new Vue({
+      el: '#app',
+      data: {
+        lesson: {}
+      },
+      created: function(){
+        fetch('http://localhost:3000/lessons').then(
+          function (response) {
+            response.json().then(
+              function (json) {
+                console.log(JSON.stringify(json));
+                app.lesson = json;
+              });
+          });
+      },
+      methods: {
+      },
+      computed: {
+      }
+  })  
+</script>
+</html>

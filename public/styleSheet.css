@@ -1,0 +1,11 @@
+.boxes {
+    display: inline-block;
+    border: 1px solid lightblue;
+    width: 200px;
+    margin: 1%;
+}
+
+img{
+    width: 100px;
+    height: 70px;
+}
