@@ -27,3 +27,8 @@ app.get("/user", function(req, res) {
 app.use(function(req, res) {
     response.status(404).send("Page not found!");
 });
+
+// Starts the app on port 3000 and display a message when it’s started
+app.listen(3000, function() {
+    console.log("App started on port 3000");
+});    
